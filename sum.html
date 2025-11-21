@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <h2>Add Two Numbers</h2>
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <button onclick="calculateSum()">Calculate Sum</button>
+    <p>Result: <span id="result"></span></p>
+    
+    <h3>Find Product</h3>
+    <input type="number" id="Pnum1" placeholder="Enter first number">
+    <input type="number" id="Pnum2" placeholder="Enter second number">
+    <button onclick="calculateProduct()">Calculate Product</button>
+    <p>Result: <span id="Presult"></span></p>
+    
+    <h4>Find Difference (Subtraction)</h4>
+    <input type="number" id="Snum1" placeholder="Enter first number">
+    <input type="number" id="Snum2" placeholder="Enter second number">
+    <button onclick="calculateSubtraction()">Calculate Difference</button>
+    <p>Result: <span id="Sresult"></span></p>
+    
+    <h4>Find Dividend</h4>
+    <input type="number" id="Dnum1" placeholder="Enter first number">
+    <input type="number" id="Dnum2" placeholder="Enter second number">
+    <button onclick="calculateDividend()">Calculate Dividend</button>
+    <p>Result: <span id="Dresult"></span></p>
+    
+    <script>
+        function calculateSum() {
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            let sum = num1 + num2;
+            document.getElementById('result').textContent = sum;
+        }
+
+        function calculateProduct() {
+            let Pnum1 = parseFloat(document.getElementById('Pnum1').value);
+            let Pnum2 = parseFloat(document.getElementById('Pnum2').value);
+            let product = Pnum1 * Pnum2;
+            document.getElementById('Presult').textContent = product;
+        }
+
+        function calculateSubtraction() {
+            let Snum1 = parseFloat(document.getElementById('Snum1').value);
+            let Snum2 = parseFloat(document.getElementById('Snum2').value);
+            let difference = Snum1 - Snum2;
+            document.getElementById('Sresult').textContent = difference;
+        }
+
+        function calculateDividend() {
+            let Dnum1 = parseFloat(document.getElementById('Dnum1').value);
+            let Dnum2 = parseFloat(document.getElementById('Dnum2').value);
+            if (Dnum2 === 0) {
+                document.getElementById('Dresult').textContent = "Error: Division by zero!";
+            } else {
+                let dividend = Dnum1 / Dnum2;
+                document.getElementById('Dresult').textContent = dividend;
+            }
+        }
+    </script>
+</body>
+</html>
